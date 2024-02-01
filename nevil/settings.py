@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'nevil.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': getenv('ENGINE'),
+        'NAME': getenv('NAME'),
+        'HOST': getenv('HOST'),
+        'PORT': getenv('PORT'),
+        'USER': getenv('USER'),
+        'PASSWORD': getenv('PASSWORD'),
     }
 }
 
